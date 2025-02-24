@@ -19,33 +19,27 @@
             position: relative;
             width: 100%;
             height: 100vh;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            overflow: hidden;
         }
-        h1 {
+        #hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        #hero h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             font-family: 'Great Vibes', cursive;
-            font-size: 4rem;
-            margin-bottom: 10px;
-            position: relative;
+            font-size: 5rem;
+            color: white;
             z-index: 1;
-        }
-        p {
-            font-size: 1.5rem;
-            margin: 0 20px 20px;
-            position: relative;
-            z-index: 1;
-        }
-        iframe {
-            width: 80%;
-            max-width: 800px;
-            height: 450px;
-            border: none;
-            border-radius: 12px;
-            position: relative;
-            z-index: 1;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
         }
         #message-wall {
             padding: 50px 20px;
@@ -96,9 +90,8 @@
 </head>
 <body>
     <section id="hero">
+        <video src="https://drive.google.com/uc?export=download&id=11Egl75O1Ivem7N4b6i1d5Tk9s40n1Qh9" autoplay loop muted playsinline></video>
         <h1>HAPPY NEO DAY</h1>
-        <p>我們秋天相遇，熬過了冬天，在春暖花開時相見～</p>
-        <iframe src="https://drive.google.com/file/d/11Egl75O1Ivem7N4b6i1d5Tk9s40n1Qh9/preview" allow="autoplay"></iframe>
     </section>
 
     <section id="message-wall">
