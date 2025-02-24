@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY NEO DAY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: black;
+            color: white;
+            font-family: 'Noto Sans TC', sans-serif;
+            overflow-x: hidden;
+        }
+        #hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+        #hero video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        #overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.5rem;
+            margin: 0 20px;
+        }
+        #spotify {
+            margin-top: 20px;
+        }
+        iframe {
+            border: none;
+            border-radius: 12px;
+        }
+        #message-wall {
+            padding: 50px 20px;
+            text-align: center;
+            background: linear-gradient(to bottom, #1a1a1a, #2e2e2e);
+        }
+        #message-wall h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        textarea, button {
+            font-size: 1rem;
+            padding: 10px;
+            width: 80%;
+            max-width: 600px;
+            margin: 10px auto;
+            display: block;
+            border: none;
+            border-radius: 8px;
+        }
+        textarea {
+            height: 100px;
+            resize: none;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        #messages {
+            margin-top: 30px;
+            text-align: left;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .message {
+            background: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+    <section id="hero">
+        <video src="https://drive.google.com/uc?export=download&id=11Egl75O1Ivem7N4b6i1d5Tk9s40n1Qh9" autoplay loop muted></video>
+        <div id="overlay">
+            <h1>HAPPY NEO DAY</h1>
+            <p>我們秋天相遇，熬過了冬天，在春暖花開時相見～</p>
+            <div id="spotify">
+                <iframe src="https://open.spotify.com/embed/track/4Dr2hJ3EnVh2Aaot6fRwDO?utm_source=generator" width="300" height="80"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="message-wall">
+        <h2>留言牆</h2>
+        <textarea id="userMessage" placeholder="寫下對薪祐的生日祝福..."></textarea>
+        <button onclick="addMessage()">送出</button>
+        <div id="messages"></div>
+    </section>
+
+    <script>
+        function addMessage() {
+            const message = document.getElementById('userMessage').value;
+            if (message.trim() === '') return;
+
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message';
+            messageDiv.textContent = message;
+
+            const messagesContainer = document.getElementById('messages');
+            messagesContainer.prepend(messageDiv);
+
+            document.getElementById('userMessage').value = '';
+        }
+    </script>
+</body>
+</html>
